@@ -1,0 +1,38 @@
+body {
+    background: #161012;
+}
+
+// All h's 1-6
+@for $index from 1 through 6 {
+  h#{$index}{
+      font-family: 'Lato', sans-serif;
+      color: #fff;
+  }
+}
+// Main holder
+.main__holder {
+    background: #161616;
+}
+
+// Students list content
+.students__content {
+    // Cards
+    .student__card {
+        margin-bottom: 40px;
+        // Button
+        .btn {
+            margin-bottom: 10px;
+        }
+        // Details
+        &__details {
+            // Basic details
+            p,a {
+                color: #747474;
+            }
+            // Social icons
+            &__social {
+
+            }
+        }
+    }
+}
