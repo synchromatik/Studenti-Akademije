@@ -1,5 +1,21 @@
+// Custom vars
+@import "_variables.scss";
+
+@mixin font-smoothing() {
+  // Font antialising on Mac OS X
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Sticky footer
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    background: #161012;
+    background: #151014;
+    margin-bottom: 60px;
 }
 
 // All h's 1-6
@@ -9,29 +25,266 @@ body {
       color: #fff;
   }
 }
-// Main holder
+
+// Main navbar
+.main__menu {
+    .navbar-nav {
+        @media (min-width: $screen-md-min) {
+            //margin:0;
+        }
+        >li>a {
+            font-family: 'Lato', sans-serif;
+            font-size: 18px;
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-bottom: 1px solid transparent;
+            &:hover {
+                border-bottom: 1px solid $brand-primary;
+            }
+        }
+    }
+    .container {
+        @media (min-width: $screen-md-min) {
+            background: url(../img/main__menu--bg.png) no-repeat left center;
+            margin-top: 20px;
+        }
+    }
+    &--items {
+        @media (min-width: $screen-md-min) {
+            margin-left: 20px;
+        }
+    }
+}
+// Subheader with search
+.subheader {
+    padding-bottom: 20px;
+    .row {
+        position: relative;
+        &--gfx {
+            background: url(../img/subheader--gfx.png) no-repeat right top;
+            position: absolute;
+            height: 350px;
+            width: 1370px;
+            right: -30px;
+        }
+        &--gfx--lower {
+            background: url(../img/subheader--gfx--lowerr.png) no-repeat left top;
+            position: absolute;
+            height: 330px;
+            width: 330px;
+            left: -50px;
+            top:330px;
+            //z-index: 999;
+        }
+    }
+    h1 {
+        font-weight: 900;
+        @media (min-width: $screen-md-min) {
+            margin-left: 40px;
+            width: 60px;
+        }
+    }
+
+    // Homepage subheader
+    &--homepage {
+        height: 460px;
+        background: url(../img/homepage--bg.jpg) repeat-x center top;
+        .main__menu {
+            @media (min-width: $screen-md-min) {
+                margin-top: 0;
+            }
+        }
+        h1 {
+            font-size: 78px;
+            font-weight: 700;
+            font-style: italic;
+            margin-top: 235px;
+            line-height: 60px;
+        }
+    }
+}
+
+// Conmtent holder
+.content__holder {
+    @media (min-width: $screen-md-min) {
+        min-width: 90%;
+    }
+    min-width: 100%;
+    min-height: 100vh;
+    float: left;
+    background: url("../img/body--bg.jpg") repeat left center;
+    -webkit-box-shadow: 10px 0px 46px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow: 10px 0px 46px 0px rgba(0,0,0,0.58);
+    box-shadow: 10px 0px 46px 0px rgba(0,0,0,0.58);
+
+    .homepage__content {
+        &__prenews {
+            margin:40px 0;
+            h4 {
+                font-family: 'Lato', sans-serif;
+                font-size: 42px;
+                color: #0c6c96;
+                font-weight: 300;
+                margin-left: 30px;
+            }
+        }
+        // News cards
+        &__news {
+            &__newscard {
+                margin-left: 30px;
+                margin-bottom: 20px;
+                @media (min-width: $screen-md-min) {
+                    margin-bottom: 0;
+                }
+                .date {
+                    text-align: center;
+                    background: #4d4d4d;
+                    float: left;
+                    display: block;
+                    width: 40px;
+                    //height: 50px;
+                    color:#fff;
+                    font-size: 24px;
+                    font-weight: bold;
+                    border-radius: 2px;
+                    span {
+                        display: block;
+                        text-align: center;
+                        font-size: 12px;
+                        font-weight: normal;
+                    }
+                }
+                .news__content {
+                    border-left: 1px solid #444444;
+                    margin-left: 60px;
+                    padding-left: 20px;
+                    // Text formating of news card
+                    span {
+                        color:#4d4d4d;
+                        font-size: 15px;
+                    }
+                    a {
+                        h6 {
+                            font-size: 24px;
+                            margin-top: 0;
+                        }
+                    }
+                    p {
+                        color: #828282;
+                    }
+                }
+                // Event modifier
+                .event__image {
+                    margin:20px 0;
+                }
+                .event__content {
+                    h4 {
+
+                    }
+                }
+                // With thumb modifier
+                &--thumb {
+                    .news__content {
+                        border-left: 0;
+                        padding-left: 0;
+                        background: red;
+                        min-height: 200px;
+                        &__holder {
+                            background: rgba(0, 0, 0, .8);;
+                            padding: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Student lisit Main holder
 .main__holder {
-    background: #161616;
+    //background: #161616;
+    &__students__content {
+        &__sidebar {
+            h2,h4 {
+                @media (min-width: $screen-md-min) {
+                    margin-left: 25px;
+                    margin-right: 120px;
+                }
+            }
+            h2 {
+                font-weight: 900;
+            }
+            h4 {
+                font-weight: 100;
+                font-size: 45px;
+                color: $brand-primary;
+            }
+        }
+    }
 }
 
 // Students list content
-.students__content {
-    // Cards
-    .student__card {
-        margin-bottom: 40px;
-        // Button
-        .btn {
-            margin-bottom: 10px;
+// Cards
+.student__card {
+    margin-bottom: 40px;
+    transition: background-color 0.5s ease;
+    @media (min-width:$screen-md-min) {
+        padding: 20px;
+    }
+    &:hover {
+        box-shadow: 0px 0px 51px 0px rgba(0, 0, 0, 0.35);
+        background: #00aeef;
+        border-radius: 4px;
+        p,a {
+            color: #fff;
         }
-        // Details
-        &__details {
-            // Basic details
-            p,a {
-                color: #747474;
-            }
-            // Social icons
-            &__social {
+    }
+    // Button
+    .btn {
+        margin-bottom: 10px;
+    }
+    // Details
+    &--details {
+        // Basic details
+        padding-left:10px;
+        padding-right: 10px;
+        p,a {
+            color: #747474;
+            margin-bottom: 5px;
+        }
+        // Social icons
+        &__social {
+            @import "_social.scss";
+        }
+    }
+}
 
+// Footer
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+
+    .container  {
+        position: relative;
+        &--gfx {
+            background: url(../img/footer--gfx.png) no-repeat right top;
+            position: absolute;
+            height: 350px;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+        }
+        .row {
+            p {
+                //position: absolute;
+                border-top:1px solid #6b6b6b;
+                bottom: 20px;
+                padding-top: 10px;
             }
         }
     }

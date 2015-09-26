@@ -129,21 +129,16 @@ gulp.task('bundle-dependecies', function() {
 // Browser sync
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: "local.ivyexec.com"
+        files: "assets/build/**/*.scss"
     });
     // Watch .phtml files for update
     gulp.watch("./**/*.html").on('change', browserSync.reload);
-    // Watch built assets for update
-    gulp.watch("assets/build/**/*.scss").on('change', browserSync.reload);
-    gulp.watch("assets/build/**/*.js").on('change', browserSync.reload);
-    gulp.watch("assets/build/**/*.{png,jpeg,jpg,svg,svgz}").on('change', browserSync.reload);
-    // Static folder html / any file type
-    gulp.watch("static/lib/tests/**/*").on('change', browserSync.reload);
+
 });
 
 // Tasks
 // cli: gulp watch
-gulp.task('watch', function() {
+gulp.task('watch', ['browser-sync'], function() {
     // Watch Config for bundle updates
     //gulp.watch('professionals.assets.config.js', ['bundle-professionals']);
     gulp.watch('assets/src/**/*.scss', ['styles']);

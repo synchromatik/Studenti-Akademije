@@ -1,18 +1,10 @@
-// Variables for Professionals part
-// its important that bower_components folder libs are never edited, and only
 // customized thru variables process or overrides.
 // read more http://stackoverflow.com/questions/16325639/how-to-customize-bootstrap-css-when-using-bootstrap-sass
-
-
-
 // Custom vars
 @import "_variables.scss";
-
 // Base bootstrap 3
 @import "./bower_components/bootstrap-sass/assets/stylesheets/bootstrap.scss";
-
 // Font Awsome
 @import "./bower_components/font-awesome-sass/assets/stylesheets/font-awesome.scss";
-
 // Main scss
 @import "_main.scss";
