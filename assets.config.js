@@ -13,7 +13,7 @@ module.exports = {
                 './bower_components/scrollToggle/scrollToggle.js' // Events on scroll
             ],
             options: {
-                uglify: false, // don't minify js since bower already ships with one
+                uglify: true, // don't minify js since bower already ships with one
                 minCSS: false, // don't minify css since bower already ships with one
                 rev: false
             }

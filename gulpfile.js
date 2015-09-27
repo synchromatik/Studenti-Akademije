@@ -129,7 +129,8 @@ gulp.task('bundle-dependecies', function() {
 // Browser sync
 gulp.task('browser-sync', function() {
     browserSync.init({
-        files: "assets/build/**/*.scss"
+        files: "./assets/build/**/*.css",
+        proxy: "127.0.0.1/wordpress"
     });
     // Watch .phtml files for update
     gulp.watch("./**/*.html").on('change', browserSync.reload);

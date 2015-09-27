@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="assets/build/css/main.min.css">
+    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/css/main.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700italic,300,900' rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
@@ -27,10 +27,15 @@
     <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
 <div class="content__holder">
     <!-- subheader with search -->
-    <div class="subheader">
+    <div class="subheader <?php
+            if ( is_home() ) {
+                // homepage class
+                echo "subheader--homepage";
+            } else {
+        }
+        ?>">
         <!-- Second navbar for sign in -->
         <nav class="navbar navbar-inverse main__menu">
             <div class="container ">
@@ -46,29 +51,36 @@
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-collapse-2">
-                    <ul class="nav navbar-nav main__menu--items">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Profila studenata</a></li>
-                        <li><a href="#">Događaji</a></li>
-                        <li><a href="#">Vesti</a></li>
 
-                    </ul>
+                    <?php if ( has_nav_menu( 'primary' ) ) : ?>
+            			<nav id="site-navigation" class="main-navigation" role="navigation">
+            				<?php
+            					// Primary navigation menu.
+            					wp_nav_menu( array(
+            						'menu_class'     => 'nav navbar-nav main__menu--items',
+            						'theme_location' => 'primary',
+            					) );
+            				?>
+            			</nav><!-- .main-navigation -->
+            		<?php endif; ?>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
                             <a class="collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
                         </li>
                     </ul>
+
+
+
+
                     <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
-                        <form class="navbar-form navbar-right form-inline" role="form">
+                        <form class="navbar-form navbar-right form-inline" role="form" action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
                             <div class="form-group">
-                                <label class="sr-only" for="Email">Email</label>
-                                <input type="email" class="form-control" id="Email" placeholder="Email" autofocus required />
+                                <input type="text" class="form-control" placeholder="Loggin" name="log" id="log" value="<?php echo wp_specialchars(stripslashes($user_login), 1) ?>" size="20" />
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="Password">Password</label>
-                                <input type="password" class="form-control" id="Password" placeholder="Password" required />
+                                <input type="password" name="pwd" id="pwd" class="form-control" placeholder="Password" required />
                             </div>
-                            <button type="submit">Sign in</button>
+                            <button type="submit" class="btn btn-primary">Sign in</button>
                         </form>
                     </div>
                 </div>
@@ -80,51 +92,10 @@
             <div class="row">
                 <div class="row--gfx"></div>
                 <div class="row--gfx--lower"></div>
-                <div class="col-md-6">
-                    <h1>Studenti Akademije</h1>
+                <div class="col-md-12">
+                    <h1><?php bloginfo( 'name' ); ?></h1>
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/img/logo.jpg" alt="Logo" class="logo pull-right" />
                 </div>
             </div>
         </div>
     </div><!-- /.subheader with search -->
-
-    <div class="container main__holder">
-        <!-- /.navbar -->
-        <div class="container main__holder__students__content">
-            <div class="row">
-                <div class="col-md-4 main__holder__students__content__sidebar">
-                    <h2>Vesti</h2>
-                    <h4>Obavestenja header</h4>
-                </div>
-                <div class="col-md-8">
-                    <div class="homepage__content__news__newscard">
-                        <span class="date">
-                            5.
-                            <span>Dec</span>
-                        </span>
-                        <div class="news__content clearfix">
-                            <a href="#"><h6>Vest naslov najnovija postovana vest</h6></a>
-                        </div>
-                        <div class="event__image">
-                            event image
-                        </div>
-                        <div class="event__content">
-                            <h4>Event subheader</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque provident dolorum sed ullam iure debitis minima aliquid dolores minus enim magni, ducimus architecto, accusantium culpa modi ipsam, illo, similique a.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- /.container-fluid -->
-
-
-</div>
-
-    <script src="assets/build/js/vendors/vendor.min.js"></script>
-    <script src="assets/build/js/main.min.js"></script>
-
-
-</body>
-
-</html>

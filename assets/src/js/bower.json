@@ -30,8 +30,9 @@
   ],
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
-    "font-awesome-sass": "https://github.com/FortAwesome/font-awesome-sass.git#~4.4.0",
+    "font-awesome-sass": "https://github.com/FortAwesome/font-awesome-sass.git#~4.3.1",
     "jquery.columnizer": "~1.6.2",
+    "scrollToggle": "https://github.com/shorttompkins/scrollToggle.git",
     "velocity": "~1.2.2"
   },
   "devDependencies": {}
