@@ -69,9 +69,6 @@
                         </li>
                     </ul>
 
-
-
-
                     <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
                         <form class="navbar-form navbar-right form-inline" role="form" action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
                             <div class="form-group">
@@ -94,7 +91,7 @@
                 <div class="row--gfx--lower"></div>
                 <div class="col-md-12">
                     <h1><?php bloginfo( 'name' ); ?></h1>
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/img/logo.jpg" alt="Logo" class="logo pull-right" />
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/img/logo-main.svg" alt="Logo" class="logo pull-right" />
                 </div>
             </div>
         </div>

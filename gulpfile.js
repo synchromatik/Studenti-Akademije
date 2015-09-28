@@ -1,12 +1,6 @@
 // Author: Marko Manojlovic marko@ivyexec.com
 // Current version: 1.3 (incremental build, if you modify this file, please update version and add to list whats added)
 
-// TODO: Move bundle configs to better segmented dir
-// TODO: Add failback/info for files that are not found by build process
-// TODO: Ask Sasa to add del task to deployment process if we need .map files removed on production
-// TODO: Add detailed documenttation to confluence
-// TODO: ADD gulp-newer to js/css/images files also
-// TODO: ADD clean task for /build folder
 // V.1.3
 // - Fixed bug with image optimization
 // V.1.2
