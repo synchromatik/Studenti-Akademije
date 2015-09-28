@@ -91,7 +91,7 @@
                 <div class="row--gfx--lower"></div>
                 <div class="col-md-12">
                     <h1><?php bloginfo( 'name' ); ?></h1>
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/img/logo-main.svg" alt="Logo" class="logo pull-right" />
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/build/img/logo-main.svg" alt="Logo" class="logo" />
                 </div>
             </div>
         </div>
