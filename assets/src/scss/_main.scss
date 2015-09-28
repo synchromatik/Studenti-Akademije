@@ -272,6 +272,8 @@ body {
 .main__holder {
     //background: #161616;
     &__students__content {
+        // Initial display none for news and students cards needed for animation
+        .col-md-8 .col-md-6 {opacity:0;}
         &__sidebar {
             h2,h4 {
                 @media (min-width: $screen-md-min) {
