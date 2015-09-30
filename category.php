@@ -15,13 +15,13 @@ get_header(); ?>
 			<div class="col-md-4 main__holder__students__content__sidebar">
 				<?php if ( in_category( 'vesti' )) { ?>
 					<h2>Vesti</h2>
-					<h4>Obaveštenja header</h4>
+					<h4>Informicije </h4>
 				<?php } else if ( in_category( 'studenti' )) { ?>
 					<h2>Profili Studenata</h2>
 					<h4>Prestavljanje studenata Akademije Umetnosti smer Produkcija u umetnosti i medijima</h4>
 				<?php } else if ( in_category( 'dogadjaji' )) { ?>
 					<h2>Događaji</h2>
-					<h4>dogadjaji header</h4>
+					<h4>Na i oko akademije</h4>
 				<?php } else  { ?>
 		            <!-- i regret nothing -->
 				<?php } ?>

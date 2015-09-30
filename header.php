@@ -7,10 +7,15 @@
 <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title></title>
-    <meta name="description" content="">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <!--[if lt IE 9]>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
+    <![endif]-->
+    <?php wp_head(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
@@ -65,14 +70,14 @@
             		<?php endif; ?>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a class="collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
+                            <a class="collapsed" data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Log In</a>
                         </li>
                     </ul>
 
                     <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse2">
                         <form class="navbar-form navbar-right form-inline" role="form" action="<?php echo get_option('home'); ?>/wp-login.php" method="post">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Loggin" name="log" id="log" value="<?php echo wp_specialchars(stripslashes($user_login), 1) ?>" size="20" />
+                                <input type="text" class="form-control" placeholder="Username" name="log" id="log" value="<?php echo wp_specialchars(stripslashes($user_login), 1) ?>" size="20" />
                             </div>
                             <div class="form-group">
                                 <input type="password" name="pwd" id="pwd" class="form-control" placeholder="Password" required />
